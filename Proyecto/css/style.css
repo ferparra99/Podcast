@@ -1,0 +1,640 @@
+@charset "UTF-8";
+/*HEADER*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
+.ico_logo {
+  margin: 5px;
+}
+
+/* Meno hamburguesa*/
+/*normalizadores*/
+header {
+  /*width: 100%;
+  position: static;
+  height: 45px;
+  top: 0;
+  padding: 10px 5%;
+  */
+  width: 100%;
+  position: static;
+  height: 10vh;
+  top: 0;
+  padding: 3vh 5vw;
+}
+
+header img {
+  float: left;
+  width: 5vh;
+}
+
+header nav {
+  float: right;
+}
+
+header nav .menu ul {
+  /*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
+  width: 100%;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  overflow: hidden;
+  list-style: none;
+  background: #0000EC;
+  height: 0px;
+  transition: height 0.5s ease;
+}
+
+header nav .menu ul li {
+  position: relative;
+}
+
+header nav .menu ul li:hover {
+  background: #0a0afc;
+}
+
+header nav .menu ul li a {
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 2vw 5%;
+  line-height: 28px;
+  display: block;
+}
+
+header nav .menu ul li a:hover {
+  text-decoration: line-through;
+  color: #00F3BB;
+}
+
+header nav .menu ul li a:active {
+  text-decoration: line-through;
+  color: #060A24;
+  opacity: 56%;
+}
+
+/*animación del menu que se desplega*/
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: auto;
+  transition: height 0.5s ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+}
+
+header nav .menu {
+  padding-top: 3px;
+}
+
+/*checkbox transparente y en primer plano*/
+header nav .menu input {
+  display: block;
+  width: 5vw;
+  height: 5vw;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+/*span -lineas del menu hamburguesa-*/
+header nav .menu span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin-bottom: 3px;
+  position: relative;
+  background: black;
+  z-index: 1;
+  transform-origin: 3px 0px;
+  transition: transform 0.5s ease, opacity 0.55s ease;
+}
+
+header nav .menu span:first-child {
+  transform-origin: 0% 0%;
+}
+
+header nav .menu span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/*movimiento a cruz*/
+header nav .menu input:checked ~ span {
+  opacity: 1;
+  transform: rotate(40deg);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0, 0);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-40deg);
+}
+
+@media screen and (min-width: 1050px) {
+  /*HEADER*/
+  header section img {
+    width: 4.5vw;
+    height: 4.5vh;
+    margin: 0.5em;
+  }
+
+  header nav .menu ul {
+    font-size: 1.2vw;
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+  }
+
+  header nav .menu ul li {
+    padding: 1vw 1.5vw;
+    display: inline-block;
+  }
+
+  header nav .menu ul li:hover {
+    background: unset;
+  }
+
+  header nav .menu ul li a {
+    padding: unset;
+    line-height: unset;
+    color: black;
+  }
+
+  header nav .menu ul li a:hover {
+    color: #00F3BB;
+  }
+
+  header nav .menu ul li a:active {
+    text-decoration: line-through;
+    color: #060A24;
+    opacity: 56%;
+  }
+
+  header nav .menu input {
+    display: none;
+  }
+
+  header nav .menu span {
+    display: none;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*------------------------------*/
+main .titulo {
+  margin-left: 6%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+main h1 {
+  font-family: 'IBM Plex Sans', monospace;
+  font-size: 12vw;
+  color: #060A24;
+  letter-spacing: 0px;
+}
+
+main .subtitulo {
+  margin-left: 6%;
+  margin-top: 3%;
+  margin-right: 10%;
+}
+
+main h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 5vw;
+  font-weight: 100;
+  color: #060A24;
+  letter-spacing: 0;
+}
+
+main .btn {
+  margin-top: 10%;
+  text-align: center;
+  font-family: 'IBM Plex Mono';
+  font-weight: 300;
+  font-size: 5vw;
+}
+main .btn a:link, main .btn a:visited {
+  background-color: #00F3BB;
+  color: #020202;
+  padding: 2.5vh 25vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+main .btn a:hover {
+  background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+}
+
+#section_episodios {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5em;
+  position: relative;
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+  clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+}
+#section_episodios .t_pod {
+  align-self: end;
+  justify-self: start;
+  margin-left: 0.5em;
+  margin-top: 10vh;
+}
+#section_episodios .t_pod h2 {
+  font-family: IBM Plex Sans;
+  font-weight: 100;
+  font-size: 12vw;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.sec {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.sec iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0;
+}
+
+#section_texto {
+  position: relative;
+  top: -6em;
+  margin: 5%;
+}
+#section_texto .texto h2 {
+  font-family: IBM Plex Sans;
+  font-size: 12.5vw;
+  color: #000000;
+  letter-spacing: 0;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#section_texto img {
+  width: 100%;
+}
+
+p {
+  font-family: IBM Plex Mono;
+  font-size: 5vw;
+  color: #060A24;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+#section_galeria {
+  display: grid;
+  grid-template-columns: 1, 1fr;
+  grid-template-rows: repeat(7, auto);
+}
+#section_galeria h2 {
+  font-family: IBM Plex Sans;
+  font-size: 12.5vw;
+  color: #000000;
+  letter-spacing: 0;
+  font-weight: bold;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+#section_galeria img {
+  width: 100%;
+  height: 100%;
+}
+
+#section_iconos {
+  display: grid;
+  grid-template-columns: 1, 1fr;
+  grid-template-rows: 9, auto;
+  justify-items: center;
+}
+#section_iconos img {
+  width: 25vw;
+}
+#section_iconos h2 {
+  align-self: end;
+  justify-self: start;
+  margin-left: 0.5em;
+  font-family: IBM Plex Sans;
+  font-size: 12vw;
+  color: #000000;
+  letter-spacing: 0;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+#section_iconos div {
+  font-family: IBM Plex Sans;
+  font-size: 8vw;
+  color: #000000;
+  letter-spacing: 0;
+  font-weight: bold;
+  margin: 5%;
+  text-align: center;
+}
+
+#seccion_semifooter {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  text-align: center;
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+#seccion_semifooter div h2 {
+  align-self: end;
+  justify-self: start;
+  margin-left: 0.5em;
+  font-family: IBM Plex Sans;
+  font-size: 12vw;
+  color: #ffffff;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin: 8%;
+}
+#seccion_semifooter .relleno {
+  height: 5vh;
+}
+#seccion_semifooter .btn {
+  margin-top: 0%;
+  justify-content: end;
+  font-weight: 300;
+}
+#seccion_semifooter .btn a:link, #seccion_semifooter .btn a:visited {
+  background-color: #00F3BB;
+  color: #020202;
+  padding: 2vh 11vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8vh;
+}
+#seccion_semifooter .btn a:hover {
+  background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+}
+
+@media screen and (min-width: 1050px) {
+  main .titulo {
+    margin-left: 15%;
+    margin-top: 10%;
+  }
+  main h1 {
+    font-size: 5vw;
+  }
+  main .subtitulo {
+    margin-left: 15%;
+    margin-top: 1%;
+    margin-right: 10%;
+    width: 46vw;
+  }
+  main h3 {
+    font-size: 1.1vw;
+  }
+  main .btn {
+    margin-top: 5%;
+    text-align: start;
+    margin-left: 15%;
+    font-family: 'IBM Plex Mono';
+    font-weight: bold;
+    font-size: 1.5vh;
+  }
+  main .btn a:link, main .btn a:visited {
+    background-color: #00F3BB;
+    color: #020202;
+    padding: 2vh 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  main .btn a:hover {
+    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  }
+
+  .boton {
+    /*tamaño*/
+    width: 15vw;
+    height: 7vh;
+    /*margen*/
+    margin-bottom: 10%;
+    background-color: #00F3BB;
+    font-size: 1vw;
+  }
+
+  #section_episodios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1em;
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  }
+  #section_episodios .t_pod {
+    align-self: end;
+    justify-self: start;
+    margin-left: 7em;
+    margin-top: 15vh;
+    height: 8vh;
+    grid-column: 1/3;
+  }
+  #section_episodios .t_pod .der {
+    margin-left: 10vw;
+  }
+  #section_episodios .t_pod h2 {
+    font-size: 3vw;
+  }
+
+  .sec {
+    justify-self: center;
+    width: 45vw;
+    height: 20vh;
+    margin-top: 2vh;
+  }
+
+  .relleno {
+    height: 20vh;
+  }
+
+  #section_texto {
+    position: relative;
+    display: flex;
+    top: -10em;
+    margin: unset;
+  }
+  #section_texto .img_señora {
+    width: 30vw;
+    margin-left: 15vw;
+  }
+  #section_texto .texto {
+    margin: 10vh;
+  }
+  #section_texto .texto h2 {
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 25%;
+    margin-bottom: 5%;
+  }
+  #section_texto .texto p {
+    font-size: 1vw;
+    width: 30vw;
+  }
+
+  #section_galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  #section_galeria h2 {
+    font-size: 3vw;
+    margin-bottom: 2%;
+    margin-left: 15%;
+  }
+  #section_galeria .t_galeria {
+    grid-column: 1/4;
+  }
+
+  #section_iconos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10vh, 1fr, 20vh;
+    justify-items: center;
+    margin-left: 10%;
+    text-align: center;
+    width: 80VW;
+  }
+  #section_iconos h2 {
+    font-family: IBM Plex Sans;
+    font-size: 3vw;
+    color: #000000;
+    margin-left: 5%;
+  }
+  #section_iconos .titulo {
+    grid-column: 1/5;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  #section_iconos div {
+    font-family: IBM Plex Sans;
+    font-size: 2vw;
+    margin: 5%;
+    text-align: center;
+  }
+  #section_iconos div img {
+    width: 8vw;
+  }
+  #section_iconos .G1 {
+    grid-column-start: 2;
+    grid-row-end: 3;
+  }
+  #section_iconos .G2 {
+    grid-column-start: 3;
+    grid-row-end: 3;
+  }
+  #section_iconos .G3 {
+    grid-column-start: 4;
+    grid-row-end: 3;
+  }
+
+  #seccion_semifooter {
+    display: grid;
+    grid-template-rows: repeat(3, 20vh);
+    grid-template-columns: 1fr;
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+  }
+  #seccion_semifooter div h2 {
+    align-self: end;
+    justify-self: start;
+    margin-top: 5%;
+    font-size: 3vw;
+  }
+  #seccion_semifooter .relleno {
+    height: 10vh;
+  }
+  #seccion_semifooter .btn {
+    text-align: center;
+    margin-top: 0%;
+    justify-content: end;
+    margin-left: 0%;
+    font-size: 1.5vh;
+    font-weight: bold;
+  }
+  #seccion_semifooter .btn a:link, #seccion_semifooter .btn a:visited {
+    background-color: #00F3BB;
+    color: #020202;
+    padding: 2vh 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  #seccion_semifooter .btn a:hover {
+    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  }
+}
+footer {
+  width: 100%;
+  position: static;
+  height: 45px;
+  top: 0;
+  padding: 10px 5%;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 5%;
+}
+
+footer .iconos {
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+
+i {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 1050px) {
+  footer {
+    width: 100%;
+    height: 10vh;
+    padding: 40px 5%;
+  }
+  footer .iconos {
+    float: right;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    align-self: center;
+  }
+  footer p {
+    float: left;
+    text-align: center;
+    padding: 0%;
+    margin-left: 2%;
+    font-size: 1vw;
+    font-weight: bold;
+  }
+  footer i {
+    font-size: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
