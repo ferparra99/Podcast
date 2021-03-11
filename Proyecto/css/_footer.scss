@@ -14,10 +14,25 @@ footer p {
 footer .iconos {
     text-align: center;
     padding-top: 10%;
-    padding-bottom:15% ;
+    padding-bottom: 15%;
+}
+
+a:link,
+a:visited {
+ 
+    color: rgb(2, 2, 2);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.fab{
+    font-size: 1.3em;
 }
 
 i {
     margin-left: 1em;
     margin-right: 1em;
+
 }
