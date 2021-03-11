@@ -605,6 +605,18 @@ footer .iconos {
   padding-bottom: 15%;
 }
 
+a:link,
+a:visited {
+  color: #020202;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fab {
+  font-size: 1.3em;
+}
+
 i {
   margin-left: 1em;
   margin-right: 1em;
